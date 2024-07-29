@@ -8,7 +8,7 @@ public:
 	virtual ~List();
 	void insert(T value);
 	void append(T value);
-	int is_present(T value) const;
+	T is_present(T value) const;
 	T is_empty() const
 	{
     	return head == 0;
@@ -33,3 +33,4 @@ int main()
 {
     return 0;
 }
+//с

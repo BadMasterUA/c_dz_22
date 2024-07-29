@@ -1,36 +1,37 @@
 #include<iostream>
 
-//template <class T> //шаблон класса с переменной Т
+template <class T> //шаблон класса с переменной Т
 class List
 {
 public:
     List() : head(0), tail(0), theCount(0) {}
 	virtual ~List();
-	void insert(int value);
-	void append(int value);
-	bool is_present(int value) const;
-	int is_empty() const
+	void insert(T value);
+	void append(T value);
+	bool is_present(T value) const;
+	T is_empty() const
 	{
     	return head == 0;
 	}
-	int count() const { return theCount; }
+	T count() const { return theCount; }
 private:
 	class ListCell
 	{
 	public:
-    	ListCell(int value, ListCell *cell = 0) : val(value), next(cell) {}
-    	int val;
+    	ListCell(T value, ListCell *cell = 0) : val(value), next(cell) {}
+    	T val;
     	ListCell *next;
 	};
-	int val;
+	T val;
 	ListCell *next;
 	ListCell *head;
 	ListCell *tail;
-	int theCount;
+	T theCount;
 };
 
 //деструктор
-List::~List()
+template <typename T>
+List<T>::~List()
 {
 	while (head != nullptr)
 	{
@@ -41,7 +42,8 @@ List::~List()
 }
 
 //вставка
-void List::insert(int value)
+template <typename T>
+void List<T>::insert(T value)
 {
     head = new ListCell(value, head);
     if (tail == nullptr)
@@ -52,7 +54,8 @@ void List::insert(int value)
 }
 
 //добавление
-void List::append(int value)
+template <typename T>
+void List<T>::append(T value)
 {
     ListCell *newCell = new ListCell(value);
     if (tail != nullptr)
@@ -67,8 +70,8 @@ void List::append(int value)
     ++theCount;
 }
 
-//
-bool List::is_present(int value) const
+template <typename T>
+bool List<T>::is_present(T value) const
 {
     for (ListCell *cell = head; cell != nullptr; cell = cell->next)
     {
