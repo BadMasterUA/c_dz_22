@@ -126,7 +126,7 @@ void ShowVector(const vector<T> &v)
 		cout << v[i] << "\n";
 	cout << endl;
 }
-////
+/*
 EmptyClass:
 max_size() = 576460752303423487 size() = 0      capacity() = 0   empty
 
@@ -156,3 +156,4 @@ Sally is 15 years old
 Bill is 17 years old
 Peter is 16 years old
 
+*/
