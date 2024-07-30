@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <list>
 using namespace std;
 
 class Student
@@ -75,7 +76,7 @@ ostream &operator<<(ostream &os, const Student &rhs)
 template <class T>
 void ShowVector(const vector<T> &v); // Відображає властивості вектора
 
-typedef vector<Student> SchoolClass;
+list<Student> SchoolClass;
 
 int main()
 {
@@ -84,29 +85,29 @@ int main()
 	Student Bill("Bill", 17);
 	Student Peter("Peter", 16);
 
-	SchoolClass EmptyClass;
-	cout << "EmptyClass:\n";
-	ShowVector(EmptyClass);
+	//добавляем наших студентов в список класса
+	//SchoolClass.push_back(Harry);
+	SchoolClass.push_back(Sally);
+	SchoolClass.push_back(Bill);
+	SchoolClass.push_back(Peter);
 
-	SchoolClass GrowingClass(3);
+	//вывод содержимого списка
+	for(auto it = SchoolClass.begin(); it != SchoolClass.end(); it++)
+	{
+		cout << *it << endl;
+	}
 
-	cout << "GrowingClass(3):\n";
-	ShowVector(GrowingClass);
-	GrowingClass[0] = Harry;
-	GrowingClass[1] = Sally;
-	GrowingClass[2] = Bill;
-	cout << "GrowingClass(3) after assigning students:\n";
-	ShowVector(GrowingClass);
+	//увеличеваем возрост учеников
+	int index = 1; // индекс элимента
+	int currentIndex = 0;
 
-	GrowingClass.push_back(Peter);
-	cout << "GrowingClass() after aded 4ht student:\n";
-	ShowVector(GrowingClass);
-
-	GrowingClass[0].SetName("Harry");
-	GrowingClass[0].SetAge(18);
-	cout << "GrowingClass() after Set:\n";
-	ShowVector(GrowingClass);
-
+	for(auto it = SchoolClass.begin(); it != SchoolClass.end(); it++)
+	{
+		if(currentIndex == index)
+		{
+			cout <<
+		}
+	}
 	return 0;
 }
 
