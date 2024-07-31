@@ -20,7 +20,7 @@ public:
 	int GetAge() const;
 	Student &operator=(const Student &rhs);
 
-	Student operator()(const Student &t)
+	void operator()(const Student &t)
 	{
 		cout << t << " ";
 	} 
