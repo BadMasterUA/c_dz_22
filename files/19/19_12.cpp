@@ -27,6 +27,6 @@ int main()
 	return 0;
 }
 ////
-for_each()
-0 3 6 9 12
+//for_each()
+//0 3 6 9 12
 

@@ -8,7 +8,8 @@ public:
 	void operator()(const T &t)
 	{
 		cout << t << " ";
-	}
+	} 
+	
 };
 
 int main()
@@ -21,5 +22,5 @@ int main()
 	return 0;
 }
 ////
-0 1 2 3 4
+//0 1 2 3 4
 
