@@ -3,4 +3,4 @@ Cat Felix;
 CatList.append(Felix);
 cout << "Felix is " << (Cat_List.is_present(Felix)) ? "" : "not " << "present\n";
 
-Лишняя скобка после (Felix) она должна быть после "present\n")
+в коде не хватает знака равно должно быть =? что бы правильно происходило сравнение

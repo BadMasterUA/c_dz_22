@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <algorithm>
+
 using namespace std;
 
 class Student
@@ -17,6 +19,11 @@ public:
 	void SetAge(const int age);
 	int GetAge() const;
 	Student &operator=(const Student &rhs);
+
+	Student operator()(const Student &t)
+	{
+		cout << t << " ";
+	} 
 
 private:
 	string itsName;
@@ -88,6 +95,13 @@ int main()
 	Student Peter("Peter", 16);
 
 	Class SchoolClass;
+	//{
+	/*public:
+		void operator()(const Student &t)
+		{
+			cout << t << " ";
+		}*/
+	//};
 	//добавляем наших студентов в список класса
 	//SchoolClass.push_back(Harry);
 	SchoolClass.push_back(Sally);
@@ -111,6 +125,13 @@ int main()
 	{
 		cout << *it << endl;
 	}
+
+	//вывод при помощи обьекта 
+	for(int i = 0; i < SchoolClass.size(); ++i)
+	{
+		SchoolClass(i);
+	}
+	cout << endl;
 	return 0;
 }
 
